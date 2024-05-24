@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Alumnos</title>
+</head>
+<body>
+<h1>Listado de Alumnos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <!-- Agrega aquí los demás campos que quieras mostrar -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="alumno : ${alumnos}">
+        <td th:text="${alumno.nombre}"></td>
+        <td th:text="${alumno.apellido}"></td>
+        <td th:text="${alumno.dni}"></td>
+        <!-- Agrega aquí los demás campos que quieras mostrar -->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
