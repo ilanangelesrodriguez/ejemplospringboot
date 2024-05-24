@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -31,6 +32,12 @@ public class AlumnoControlador {
     @PostMapping("/guardar")
     public String guardar(Alumno alumno) {
         servicioAlumno.guardar(alumno);
+        return "redirect:/alumnos/listar";
+    }
+
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id") Long id) {
+        servicioAlumno.eliminarPorId(id);
         return "redirect:/alumnos/listar";
     }
 }

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Listado de Alumnos</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
-<h1>Listado de Alumnos</h1>
+<h1 class="h1">Listado de Alumnos</h1>
 <table>
     <thead>
     <tr>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>DNI</th>
-        <!-- Agrega aquí los demás campos que quieras mostrar -->
+        <th>Celular</th>
+        <th>Email</th>
+        <th>Dirección</th>
     </tr>
     </thead>
     <tbody>
@@ -19,7 +23,9 @@
         <td th:text="${alumno.nombre}"></td>
         <td th:text="${alumno.apellido}"></td>
         <td th:text="${alumno.dni}"></td>
-        <!-- Agrega aquí los demás campos que quieras mostrar -->
+        <td th:text="${alumno.celular}"></td>
+        <td th:text="${alumno.email}"></td>
+        <td th:text="${alumno.direccion}"></td>
     </tr>
     </tbody>
 </table>

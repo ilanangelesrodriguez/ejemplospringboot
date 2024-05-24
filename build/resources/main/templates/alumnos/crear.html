@@ -5,14 +5,20 @@
 </head>
 <body>
 <h1>Crear Alumno</h1>
-<form th:object="${alumno}" method="post">
+<form th:object="${alumno}" action="/alumnos/guardar" method="post">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" th:field="*{nombre}" />
+    <input type="text" id="nombre" th:field="*{nombre}" required />
     <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" th:field="*{apellido}" />
+    <input type="text" id="apellido" th:field="*{apellido}" required />
     <label for="dni">DNI:</label>
-    <input type="text" id="dni" th:field="*{dni}" />
-    <!-- Agrega aquí los demás campos que quieras mostrar -->
+    <input type="text" id="dni" th:field="*{dni}" required />
+    <label for="celular">Celular:</label>
+    <input type="text" id="celular" th:field="*{celular}" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" required />
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" th:field="*{direccion}" required />
+    
     <input type="submit" value="Guardar" />
 </form>
 </body>

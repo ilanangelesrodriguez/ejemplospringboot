@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Crear Alumno</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<h1>Crear Alumno</h1>
-<form th:object="${alumno}" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" th:field="*{nombre}" />
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" th:field="*{apellido}" />
-    <label for="dni">DNI:</label>
-    <input type="text" id="dni" th:field="*{dni}" />
-    <!-- Agrega aquí los demás campos que quieras mostrar -->
-    <input type="submit" value="Guardar" />
+
+<form th:object="${alumno}" action="/alumnos/guardar" method="post" class="form">
+    <h1 class="h1 title">Crear Alumno</h1>
+    <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required class="input" />
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" th:field="*{apellido}" required class="input" />
+    </div>
+    <div class="input-group">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" th:field="*{dni}" required class="input" />
+        <label for="celular">Celular:</label>
+        <input type="text" id="celular" th:field="*{celular}" required class="input" />
+    </div>
+    <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required class="input" />
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" th:field="*{direccion}" required class="input" />
+    </div>
+    <input type="submit" value="Guardar" class="button" />
 </form>
 </body>
 </html>
