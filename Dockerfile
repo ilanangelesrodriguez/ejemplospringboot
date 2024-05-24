@@ -14,7 +14,7 @@ RUN gradle clean build
 FROM openjdk:17.0.2-jdk-slim
 
 # Exponer el puerto que utilizará la aplicación
-EXPOSE 8080
+EXPOSE 8081
 
 # Copiar el archivo JAR construido desde la etapa anterior
 COPY --from=build /app/build/libs/EjemploSpringBoot-0.0.1-SNAPSHOT.jar /app/EjemploSpringBoot-0.0.1-SNAPSHOT.jar
